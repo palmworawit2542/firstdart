@@ -1,64 +1,31 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+import 'config/constant.dart';
+import 'screen/index.dart';
+import 'screen/home.dart';
+import 'screen/login.dart';
+import 'screen/register.dart';
+
+void main() => runApp(MyApp());
+
 
 class MyApp extends StatelessWidget {
+  const MyApp({ Key? key }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      home: Index(),
+      routes: {
+        'Login' : (context) => Login(),
+        'Register' : (context) => Register(),
+      },
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: pColor,
+        secondaryHeaderColor: sColor,
       ),
-      home: MyHomePage(title: 'Worawit Ongsakul'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+      //home: Home(),
+      //routes: ,
     );
   }
 }
