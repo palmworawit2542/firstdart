@@ -13,14 +13,14 @@ class Index extends StatelessWidget {
         alignment: Alignment.center,
         child: Stack(
           children: [
-              Positioned(
-                top: -50,
-                left: -30,
-                child: Image.asset(
-                  "asset/image/orange_circle.png",
-                  width: size.width * 0.3,
-                ),
-              ),
+              // Positioned(
+              //   top: -50,
+              //   left: -30,
+              //   child: Image.asset(
+              //     "asset/image/orange_circle.png",
+              //     width: size.width * 0.3,
+              //   ),
+              // ),
 
             Column(
               mainAxisAlignment: MainAxisAlignment.start,

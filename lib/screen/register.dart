@@ -1,3 +1,4 @@
+import 'package:firstdart/backend/database.dart';
 import 'package:firstdart/config/constant.dart';
 import 'package:flutter/material.dart';
 
@@ -192,7 +193,9 @@ class _RegisterState extends State<Register> {
         style: ElevatedButton.styleFrom(
           primary: pColor,
         ),
-        onPressed: (){       
+        onPressed: (){  
+          print("hello");
+
           if(formKey.currentState!.validate()){
               formKey.currentState!.save();
               print("Name : $name");
@@ -200,7 +203,10 @@ class _RegisterState extends State<Register> {
               print("Email : $email");
               print("Password : $password");
               //print("ConfirmPassword : $confirmpassword");
+              var local = DBLocal();   
+              local.register(name, surname, email, password);                
               formKey.currentState!.reset();  
+              Navigator.pushNamed(context, 'Login');
           }
         }, 
         child: Text('Submit'),

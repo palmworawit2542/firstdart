@@ -1,3 +1,4 @@
+import 'package:firstdart/screen/dashboard.dart';
 import 'package:flutter/material.dart';
 
 import 'config/constant.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
       routes: {
         'Login' : (context) => Login(),
         'Register' : (context) => Register(),
+        'Dashboard' : (context) => Dashboard(),
       },
       theme: ThemeData(
         primaryColor: pColor,
